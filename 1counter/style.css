@@ -21,7 +21,7 @@ html{
 }
 
 body{
-    font-family: 'Open Sans', sans-serif
+    font-family: 'Open Sans', sans-serif;
 }
 
 p{
@@ -34,7 +34,52 @@ img{
 }
 
 .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     max-width: 900px;
+    height: 100vh;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+.counter-div{
+    width: 40rem;
+    border: 1px solid var(--grey);
+    padding: 1rem;
+    background-color: var(--light-blue);
+    color: var(--white);
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* all of the children of the counter div */
+.counter-div > *{
+    margin-bottom: 2rem; /*space them apart from each other*/
+}
+
+.count{
+    font-size: 4rem;
+}
+
+.buttons button{
+    padding: 1rem;
+    margin: 0 1rem;
+    font-size: 1.5rem;
+    color: var(--white);
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button.subtract{
+    background-color: orangered;
+}
+button.reset{
+    background-color: var(--white);
+    color: var(--black);
+}
+button.add{
+    background-color: green;
 }

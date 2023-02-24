@@ -4,9 +4,13 @@
 
 **Today's Progress**: set up environment, installed node, created template files for the projects, created a simple counter app using event delegation.
 
-**Thoughts:** 
+**Thoughts:** I learned about when to use querySelector vs. getELementBy___ 
 
-**Link to work:** [Counter App](https://github.com/rpremvaree12/100daysofJS/tree/main/1counter)
+**Link to work:** 
+
+[Counter App](https://github.com/rpremvaree12/100daysofJS/tree/main/1counter)
+
+[Random Number Generator](https://github.com/rpremvaree12/100daysofJS/tree/main/1counter)
 
 
 

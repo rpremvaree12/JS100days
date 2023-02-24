@@ -6,7 +6,7 @@
 
 **Thoughts:** 
 
-**Link to work:** [Counter App](http://www.example.com)
+**Link to work:** [Counter App](https://github.com/rpremvaree12/100daysofJS/tree/main/1counter)
 
 
 

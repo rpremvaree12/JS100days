@@ -10,7 +10,7 @@
 
 [Counter App](https://github.com/rpremvaree12/100daysofJS/tree/main/1counter)
 
-[Random Number Generator](https://github.com/rpremvaree12/100daysofJS/tree/main/1counter)
+[Random Number Generator](https://rpremvaree12.github.io/100daysofJS/2randomNumGen/)
 
 
 

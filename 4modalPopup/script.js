@@ -1,13 +1,16 @@
-const colorCode = document.querySelector(".hexcode")
-const btn = document.querySelector(".generate")
+const btn = document.querySelector("#btn"),
+    close = document.querySelector(".close"),
+    modal = document.querySelector(".modal")
 
-const randomHexCode = ()=> {
-    let color = Math.random().toString(16).substring(2,8);
-    colorCode.innerHTML = "#"+color;
-    document.querySelector("body").style.backgroundColor = color;
+btn.addEventListener("click", openModal);
+close.addEventListener("click", closeModal);
+modal.addEventListener("click", closeModal);
+
+function openModal(e){
+    e.preventDefault();
+    modal.style.display = "block";
 }
-// toString with parameter generates with base 16 / hex
 
-btn.addEventListener("click", randomHexCode);
-
-randomHexCode();
+function closeModal(e){
+    modal.style.display = "none";
+}

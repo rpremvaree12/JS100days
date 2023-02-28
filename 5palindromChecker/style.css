@@ -55,12 +55,6 @@ img{
     border-radius: 5px;
 }
 
-.palindrome > *{
-    border: none;
-    outline: none;
-    padding: 1rem 5px;
-}
-
 input{
     width: 70%;
     border: none;

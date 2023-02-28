@@ -48,14 +48,14 @@ img{
     background-color: slategray;
 }
 
-.pal{
+.palindrome{
     width: 40rem;
     background: var(--white);
     padding: 5rem 3rem;
     border-radius: 5px;
 }
 
-.pal > *{
+.palindrome > *{
     border: none;
     outline: none;
     padding: 1rem 5px;
@@ -73,7 +73,6 @@ input{
 button{
     width: 25%;
     padding: 1rem 5px;
-    border: none;
 }
 
 p.result{

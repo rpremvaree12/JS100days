@@ -22,6 +22,14 @@
 
 **Today's Progress**: Completed the modal popup generator for Day 4 projects. Started  markup for the Day 5 project - palindrome checker.
 
-**Thoughts:** Learned how to create a popup using two simple JS functions and display block, display none. 
+**Thoughts:** Learned how to create a popup using two simple JS functions and display block, display none. I'm not loving the markup part of creating projects but I know it's a necessary part of learning CS.
 
-**Link to work:** [Modal Popup Generator]()
+**Link to work:** [Modal Popup Generator](https://github.com/rpremvaree12/100daysofJS/tree/main/4modalPopup)
+
+### Day 4: February 27, 2023
+
+**Today's Progress**: finished the palindrome checker rather quickyl due to having a palidrome checker function already completed from FCCs.
+
+**Thoughts:** I was able to reuse an old function that cleaned up the phrase using regex and check for a palindrome. Nothing too fancy with JS but it was good to see how ES6 uses string interpolation similar to Ruby. I showed this project off and the only feedback I got was "why would you want a palindrome checker...?"
+
+**Link to work:** [Palindrome Checker](https://github.com/rpremvaree12/100daysofJS/tree/main/5palindromeChecker)

@@ -6,7 +6,7 @@ const downloadLink = document.querySelector("#download-link");
 btn.addEventListener("click", generateLink);
 
 function generateLink(e){
-    
     e.preventDefault();
+    
 
 }

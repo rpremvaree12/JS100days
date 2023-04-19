@@ -57,7 +57,6 @@ section h1{
 
 .online{
     background-color:var(--light-blue);
-
 }
 
 section p{
@@ -65,7 +64,8 @@ section p{
     font-size: 2rem;
 }
 
-section img{
-    width: 25%;
+section span{
+    font-size: 10rem;
     border-radius: 10rem;
+    color: white;
 }

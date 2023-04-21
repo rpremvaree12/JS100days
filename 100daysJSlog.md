@@ -54,7 +54,7 @@
 
 ### Day 7?: April 21, 2023
 
-**Today's Progress**: Finished the Internet Connection Checker
+**Today's Progress**: Finished the Internet Connection Checker. Learned about how to simulate a disconnection from the dev panel. learning more about async functions.
 
 **Thoughts:** I returned to working on these projects after a long break due to sickness and overall feeling of lethargy. I skipped the download link generator as it wasn't too interesting to me at this moment. I'll revisit it later. For today's project I started it yesterday but I was getting stuck on the smallest thing - getting a no wifi icon to show up. Realized that it was because FA made it a premium icon whereas the wifi connection symbol was free to use. Had to revert to a new icon design.
 

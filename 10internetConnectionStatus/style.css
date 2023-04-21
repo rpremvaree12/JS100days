@@ -44,7 +44,7 @@ section{
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color:var(--black);
+    background-color:var(--color-primary);
     height: 100vh;
 }
 
@@ -64,7 +64,7 @@ section p{
     font-size: 2rem;
 }
 
-section span{
+section i{
     font-size: 10rem;
     border-radius: 10rem;
     color: white;

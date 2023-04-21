@@ -51,3 +51,11 @@
 **Thoughts:** Felt very sick and extremely tired yesterday so I didn't get a chance to work on code. I'm okay with that. Not going to be too hard on myself. I learned how to access the clipboard and automatically copy text which was cool to see. I feel more comfortable with understanding then() and arrow functions.
 
 **Link to work:** [Coupon Clicker](https://github.com/rpremvaree12/100daysofJS/tree/main/7couponClicker)
+
+### Day 7?: April 21, 2023
+
+**Today's Progress**: Finished the Internet Connection Checker
+
+**Thoughts:** I returned to working on these projects after a long break due to sickness and overall feeling of lethargy. I skipped the download link generator as it wasn't too interesting to me at this moment. I'll revisit it later. For today's project I started it yesterday but I was getting stuck on the smallest thing - getting a no wifi icon to show up. Realized that it was because FA made it a premium icon whereas the wifi connection symbol was free to use. Had to revert to a new icon design.
+
+**Link to work:** [Coupon Clicker](https://github.com/rpremvaree12/100daysofJS/tree/main/7couponClicker)

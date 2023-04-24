@@ -21,7 +21,8 @@ html{
 }
 
 body{
-    font-family: 'Open Sans', sans-serif
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--light-blue);
 }
 
 p{
@@ -34,7 +35,11 @@ img{
 }
 
 .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     max-width: 900px;
     margin: 0 auto;
     padding: 0 20px;
+    height: 100vh;
 }

@@ -1,13 +1,12 @@
 class Quiz{
-    constructor(question){
+    constructor(questions){
         this.score = 0;
         this.questions = questions;
         this.questionIndex = 0;
-
     }
 
     getQuestion(){
-        return this.questions[this.questionsIndex];
+        return this.questions[this.questionIndex];
     }
 
     guess(answer){
@@ -36,23 +35,21 @@ class Question{
 }
 
 //display question
-
 function displayQuestion(){
     if(quiz.isEnded()){
         showScore();
-
-    }else{
+    }
+    else{
         let questionElement = document.querySelector("#question");
-        questionElement.innerHTML = quiz.getQuestion();
-        console.log(questionElement)
+        questionElement.innerHTML = quiz.getQuestion().text;
 
         // show options
-        let choices = quiz.getQuestion();
+        let choices = quiz.getQuestion().choices;
 
         for(let i = 0; i<choices.length; i++){
             let choiceElement = document.querySelector("#choice"+i);
             choiceElement.innerHTML = choices[i];
-            guess("btn"+i,choices[i]);
+            // guess("btn"+i, choices[i]);
         }
         showProgress();
     }
@@ -60,19 +57,20 @@ function displayQuestion(){
 
 
 // guess function
-
 function guess(id, guess){
     let button = document.querySelector(id);
+    console.log(button)
     button.onclick = function(){
         quiz.guess(guess);
         displayQuestion();
     }
 }
+
 // progress function
 function showProgress(){
     let currentQuestionNumber = quiz.questionIndex + 1;
     let progressElement = document.querySelector("#progress");
-    progressElement.innerHTML = `Question ${currentQuestionNumber} of ${quiz.question.length}`;
+    progressElement.innerHTML = `Question ${currentQuestionNumber} of ${quiz.questions.length}`;
 }
 
 function showScore(){
@@ -91,14 +89,18 @@ function showScore(){
 
 // create quiz questions
 
-let questions = [
-    new Question("What does Hyper Text Markup Language Stand for?",
+let questionBank = [
+    new Question("What does Hyper Text Markup Language Stand for?", 
     ["JQuery", "XHTML","CSS","HTML"],
     "HTML"
-    )
+    ),
+    new Question("What does CSS stand for?", 
+    ["JQuery", "XHTML","CSS","HTML"],
+    "CSS"
+    ),
 ];
 
-let quiz = new Quiz(questions);
+let quiz = new Quiz(questionBank);
 
 //display questions
 displayQuestion();

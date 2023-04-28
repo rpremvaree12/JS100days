@@ -1,3 +1,7 @@
+// quiz class 
+// get question, check if the option chosen is correct
+// determine if the quiz has ended
+
 class Quiz{
     constructor(questions){
         this.score = 0;
@@ -9,8 +13,8 @@ class Quiz{
         return this.questions[this.questionIndex];
     }
 
-    guess(answer){
-        if(this.getQuestion().isCorrectAnswer(answer)){
+    checkGuess(option){
+        if(this.getQuestion().isCorrectAnswer(option)){
             this.score++;
         }
         this.questionIndex++;
@@ -22,6 +26,9 @@ class Quiz{
 
 }
 
+// question class
+// question text, answer options, correct answer
+
 class Question{
     constructor(text, choices, answer){
         this.text = text;
@@ -29,10 +36,13 @@ class Question{
         this.answer = answer;
     }
 
-    isCorrectAnswer(choice){
-        return this.answer === choice;
+    isCorrectAnswer(option){
+        // true if the option chosen is the correct answer
+        return this.answer === option;
     }
 }
+
+
 
 //display question
 function displayQuestion(){
@@ -47,21 +57,23 @@ function displayQuestion(){
         let choices = quiz.getQuestion().choices;
 
         for(let i = 0; i<choices.length; i++){
+            // go through all of html elements and set them to the possible choices
             let choiceElement = document.querySelector("#choice"+i);
             choiceElement.innerHTML = choices[i];
-            // guess("btn"+i, choices[i]);
+
+            // not sure why calling guess here
+            makeGuess("#btn"+i, choices[i])
         }
         showProgress();
     }
 }
-
-
-// guess function
-function guess(id, guess){
+// guess helper function
+function makeGuess(id, guess){
     let button = document.querySelector(id);
-    console.log(button)
     button.onclick = function(){
-        quiz.guess(guess);
+        quiz.checkGuess(guess);
+
+        // display next question after guessing
         displayQuestion();
     }
 }
@@ -87,8 +99,7 @@ function showScore(){
     quizElement.innerHTML = quizEndHTML;
 }
 
-// create quiz questions
-
+// create question banks
 let questionBank = [
     new Question("What does Hyper Text Markup Language Stand for?", 
     ["JQuery", "XHTML","CSS","HTML"],
@@ -104,4 +115,3 @@ let quiz = new Quiz(questionBank);
 
 //display questions
 displayQuestion();
-

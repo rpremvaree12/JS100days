@@ -1,17 +1,20 @@
+// quiz class 
+// get question, check if the option chosen is correct
+// determine if the quiz has ended
+
 class Quiz{
-    constructor(question){
+    constructor(questions){
         this.score = 0;
         this.questions = questions;
         this.questionIndex = 0;
-
     }
 
     getQuestion(){
-        return this.questions[this.questionsIndex];
+        return this.questions[this.questionIndex];
     }
 
-    guess(answer){
-        if(this.getQuestion().isCorrectAnswer(answer)){
+    checkGuess(option){
+        if(this.getQuestion().isCorrectAnswer(option)){
             this.score++;
         }
         this.questionIndex++;
@@ -23,6 +26,9 @@ class Quiz{
 
 }
 
+// question class
+// question text, answer options, correct answer
+
 class Question{
     constructor(text, choices, answer){
         this.text = text;
@@ -30,49 +36,53 @@ class Question{
         this.answer = answer;
     }
 
-    isCorrectAnswer(choice){
-        return this.answer === choice;
+    isCorrectAnswer(option){
+        // true if the option chosen is the correct answer
+        return this.answer === option;
     }
 }
 
-//display question
 
+
+//display question
 function displayQuestion(){
     if(quiz.isEnded()){
         showScore();
-
-    }else{
+    }
+    else{
         let questionElement = document.querySelector("#question");
-        questionElement.innerHTML = quiz.getQuestion();
-        console.log(questionElement)
+        questionElement.innerHTML = quiz.getQuestion().text;
 
         // show options
-        let choices = quiz.getQuestion();
+        let choices = quiz.getQuestion().choices;
 
         for(let i = 0; i<choices.length; i++){
+            // go through all of html elements and set them to the possible choices
             let choiceElement = document.querySelector("#choice"+i);
             choiceElement.innerHTML = choices[i];
-            guess("btn"+i,choices[i]);
+
+            // not sure why calling guess here
+            makeGuess("#btn"+i, choices[i])
         }
         showProgress();
     }
 }
-
-
-// guess function
-
-function guess(id, guess){
+// guess helper function
+function makeGuess(id, guess){
     let button = document.querySelector(id);
     button.onclick = function(){
-        quiz.guess(guess);
+        quiz.checkGuess(guess);
+
+        // display next question after guessing
         displayQuestion();
     }
 }
+
 // progress function
 function showProgress(){
     let currentQuestionNumber = quiz.questionIndex + 1;
     let progressElement = document.querySelector("#progress");
-    progressElement.innerHTML = `Question ${currentQuestionNumber} of ${quiz.question.length}`;
+    progressElement.innerHTML = `Question ${currentQuestionNumber} of ${quiz.questions.length}`;
 }
 
 function showScore(){
@@ -89,17 +99,19 @@ function showScore(){
     quizElement.innerHTML = quizEndHTML;
 }
 
-// create quiz questions
-
-let questions = [
-    new Question("What does Hyper Text Markup Language Stand for?",
+// create question banks
+let questionBank = [
+    new Question("What does Hyper Text Markup Language Stand for?", 
     ["JQuery", "XHTML","CSS","HTML"],
     "HTML"
-    )
+    ),
+    new Question("What does CSS stand for?", 
+    ["JQuery", "XHTML","CSS","HTML"],
+    "CSS"
+    ),
 ];
 
-let quiz = new Quiz(questions);
+let quiz = new Quiz(questionBank);
 
 //display questions
 displayQuestion();
-
